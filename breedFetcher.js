@@ -1,7 +1,7 @@
 const request = require('request');
 const fs = require('fs');
 
-function breedFetcher (breed) {
+function fetchBreedDescription (breed) {
     const URL = `https://api.thecatapi.com/v1/breeds/search?q=${breed}`;
     request(URL, (error, response, body) => {
         if (error) {
@@ -26,6 +26,8 @@ function breedFetcher (breed) {
 }
 
 
-breedFetcher(process.argv[2]);
+//fetchBreedDescription(process.argv[2]);
+
+module.exports = { fetchBreedDescription };
 
 //https://docs.thecatapi.com/api-reference/breeds/breeds-search
